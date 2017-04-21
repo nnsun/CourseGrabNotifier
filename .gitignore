@@ -1,0 +1,6 @@
+*.pubxml
+*.config
+*.user
+obj/
+appsettings.json
+project.lock.json
