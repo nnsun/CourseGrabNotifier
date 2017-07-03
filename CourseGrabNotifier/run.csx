@@ -217,7 +217,7 @@ private static List<Tuple<int, bool>> CheckSubjectCourses(KeyValuePair<string, L
 private static async Task SendEmail(string email, int courseNum, string title, string section, string apiKey)
 {
     dynamic sg = new SendGridAPIClient(apiKey);
-    Email from = new Email("mailer@cornellcoursegrab.com");
+    Email from = new Email("mailer@cornellcoursegrab.com", "CourseGrab");
     Email to = new Email(email);
     string subject = $"Course ID {courseNum}: {title}, {section} is now open!";
     string directory = System.Environment.CurrentDirectory;
