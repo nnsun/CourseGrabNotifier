@@ -176,7 +176,7 @@ private static string BuildCoursesString(List<int> courseList)
  */
 private static List<Tuple<int, bool>> CheckSubjectCourses(KeyValuePair<string, List<int>> courses)
 {
-    string url = $"http://classes.cornell.edu/browse/roster/FA17/subject/{courses.Key}";
+    string url = $"http://classes.cornell.edu/browse/roster/SP18/subject/{courses.Key}";
     HtmlWeb htmlWeb = new HtmlWeb();
     HtmlDocument htmlDocument = htmlWeb.Load(url);
     HtmlNode[] courseNumNodes = htmlDocument.DocumentNode.SelectNodes("//strong").ToArray();
