@@ -187,9 +187,9 @@ private static List<Tuple<int, bool>> CheckSubjectCourses(KeyValuePair<string, L
         int courseNum = int.Parse(Regex.Replace(courseNumNode.InnerHtml, @"\D", ""));
         if (courses.Value.Contains(courseNum))
         {
-            string status = courseNumNode.ParentNode.ParentNode.ParentNode.SelectNodes(
-                                        ".//i").First().Attributes["class"].Value;
-            if (status.Contains("open-status-open"))
+            string status = courseNumNode.ParentNode.ParentNode.ParentNode.SelectSingleNode(
+                                        ".//li[@class='open-status']").FirstChild().Attributes["data-content"].Value;
+            if (status.Contains("Open"))
             {
                 Tuple<int, bool> courseStatus = new Tuple<int, bool>(courseNum, true);
                 statuses.Add(courseStatus);
