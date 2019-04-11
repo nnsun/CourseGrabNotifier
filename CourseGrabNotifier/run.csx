@@ -177,7 +177,7 @@ private static string BuildCoursesString(List<int> courseList)
 private static List<Tuple<int, bool>> CheckSubjectCourses(KeyValuePair<string, List<int>> courses)
 {
     // TODO: get current semester using redirect? Need to find out when default semester changes
-    string url = $"http://classes.cornell.edu/browse/roster/SP19/subject/{courses.Key}";
+    string url = $"http://classes.cornell.edu/browse/roster/FA19/subject/{courses.Key}";
     HtmlWeb htmlWeb = new HtmlWeb();
     HtmlDocument htmlDocument = htmlWeb.Load(url);
     HtmlNode[] courseNumNodes = htmlDocument.DocumentNode.SelectNodes("//strong").ToArray();
